@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+{% block display %}
+<div id="card">
+    <div id="content">
+        <div id="title">SSL Tracking</div>
+        <table>
+        <tbody>
+            <tr>
+                <th><b><strong>Website</strong></b></th>
+                <th><b><strong>Internal Certificate</strong></b></th>
+                <th><b><strong>Status</strong></b></th>
+                <th><b><strong>Details</strong></b></th>
+                <th><b><strong>Days Until Expiry</strong></b></th>
+            </tr>
+{% for item in sites %}
+            <tr>
+                <td><a href="{{ item.url }}">{{ item.url }}</a></td>
+                <td>{% if item.internal_cert == True %}True{% else %}False{% endif %}</td>
+                <td>{{ item.status }}</td>
+                <td id="details">{{ item.status_desc }}</td>
+                <td>{{ item.time_left }}</td>
+            </tr>
+{% endfor %}
+        </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
