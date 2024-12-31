@@ -4,8 +4,6 @@
   alt_ssl: true
 - server: homeblog.hometest.local
   alt_ssl: true
-- server: syslog.hometest.local
-  alt_ssl: true
 - server: ansible.hometest.local
   alt_ssl: true
 - server: netbox.hometest.local

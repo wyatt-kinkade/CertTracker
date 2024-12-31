@@ -24,10 +24,10 @@ def verify_site_func(url, alt_ssl_chk):
     try:
         site_error = ""
         if alt_ssl_chk == True:
-            site_result = requests.get(url, timeout=20, verify=alt_ssl)
+            site_result = requests.get(url, timeout=5, verify=alt_ssl)
             print("Has Custom SSL")
         else:
-            site_result = requests.get(url, timeout=20, verify=True)
+            site_result = requests.get(url, timeout=5, verify=True)
             print("Has 3rd Party SSL")
         print(site_result)
         #print(site_result.status_code) #Testing function
